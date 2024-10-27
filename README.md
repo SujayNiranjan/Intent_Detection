@@ -12,4 +12,11 @@ The input to the system will consist of a few frames, along with bounding box in
 Our classical approach has three submodules. 
 1. The first one is detecting the object of interest using bounding boxes. This can be done using models like YOLO (with a customized final layer) or even with models like Grounding DINO.
 2. The next module uses optical flow or tracking DINO to track the object of interest in the scene.
-3. Using Newton-Euler methods in our final module, we predict the next set of x, y points or trajectories. 
+3. Using Newton-Euler methods in our final module, we predict the next set of x, y points or trajectories.
+
+## Unet + LSTM
+The machine learning approach we plan to use involves a combination of UNet and LSTM. UNet will be utilized to generate a latent space representation of the initially fed scene or image, and this latent space will subsequently be used to train the LSTM to predict the future state of the scene.
+
+The UNet training will be unsupervised, while the LSTM training will be supervised based on the outputs of the UNet.
+
+By doing this, we can estimate or predict the future actions of the object. 
